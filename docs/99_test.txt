@@ -1,0 +1,26 @@
+URL='localhost:3000'
+
+/*
+-X: method
+-d: data
+-H: header
+*/
+
+curl -X GET ${URL}/users
+
+curl -X GET ${URL}/users/1
+
+curl \
+-H "Content-Type: application/json" \
+-X POST \
+-d '{"name":"wind", "email":"wind@gmail.com"}' \
+${URL}/users
+
+curl \
+-H "Content-Type: application/json" \
+-X PUT \
+-d '{"name":"wind2", "email":"wind@gmail.com"}' \
+${URL}/users/7
+
+curl -X DELETE ${URL}/users/7
+
